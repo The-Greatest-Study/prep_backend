@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0.33
+    restart: always
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_bin
+    environment:
+      MYSQL_ROOT_PASSWORD: TheGreatestStudy220129!!
+    ports:
+      - 3306:3306
+
+networks:
+  default:
+    name: tgs-network
