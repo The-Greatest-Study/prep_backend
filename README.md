@@ -24,5 +24,6 @@ docker exec -it tct-db bash
 ### 3. DB 툴을 통해 접속
 
 - DBeaver
+    - https://dbeaver.io/
     - Edit Connection (F4) → Connection settings → Driver properties
     - allowPublicKeyRetrieval 설정을 True로 변경
