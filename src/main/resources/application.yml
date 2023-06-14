@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tgs_tct?useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&autoReconnection=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: TheGreatestStudy220129!!
+
+  flyway:
+    url: jdbc:mysql://localhost:3306?useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&autoReconnection=true
+    schemas: tgs_tct
+    user: root
+    password: TheGreatestStudy220129!!
+    baseline-on-migrate: true
