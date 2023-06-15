@@ -1,4 +1,5 @@
 bin/
+.vscode
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,gradle,windows,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,gradle,windows,macos
