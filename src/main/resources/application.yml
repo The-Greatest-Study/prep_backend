@@ -11,3 +11,8 @@ spring:
     user: root
     password: TheGreatestStudy220129!!
     baseline-on-migrate: true
+
+logging:
+  level:
+    root: info
+    "[com.lgcns.tct_backend]": debug
