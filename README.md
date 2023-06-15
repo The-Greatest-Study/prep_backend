@@ -19,16 +19,29 @@ $ docker compose up -d
 $ docker ps
 
 # cli에서 접속하기
-docker exec -it tct-db bash
+$ docker exec -it tct-db bash
+$ mysql -u root -p    # 비밀번호(docker-compose.yml 참고) : TheGreatestStudy220129!!
+
+# docker 중지
+$ docker compose down
 ```
 
-### 3. 기준 데이터 추가
+## 3. 기준 데이터 추가
 
 - src\main\resources\db\migration 경로 아래에 DDL, DML 쿼리 작성
 - 기존에 작성되어 있는 script 수정 시, local db (tct-db) 내의 tgs_tct 스키마를 삭제하고 다시 spring boot 서버 기동
--
+- **flyway script naming rule**
+  <br/>{Prefix}{version}\_{sub version}\__{create/insert/update/delete}_{테이블명}.sql
+  - Prefix : V = versioned / U = undo / R = repeatable migration
+  - version : 우리가 테이블을 정의할 때마다 +1
+  - subversion
+    - 001 ~ 100 : create
+    - 101 ~ 200 : insert
+    - 201 ~ 300 : update
+    - 301 ~ 400 : delete
+  - ex. V0_001\_\_create_tb_user.sql
 
-### 3. DB 툴을 통해 접속
+## 4. DB 툴을 통해 접속
 
 - DBeaver
   - https://dbeaver.io/
