@@ -1,4 +1,8 @@
 spring:
+  output:
+    ansi:
+      enabled: always
+
   datasource:
     url: jdbc:mysql://localhost:3306/tgs_tct?useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&autoReconnection=true
     driver-class-name: com.mysql.cj.jdbc.Driver
