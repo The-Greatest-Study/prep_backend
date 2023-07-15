@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgcns.tct_backend.MzList.Repository.MzListRepository">
+    <select id="selectMzListByUserId" parameterType="String" resultType="MzList">
+        <![CDATA[
+            SELECT  /* user.selectUser */
+                    LIST_ID,
+                    USER_ID,
+                    LIST_NAME ,
+                    CREATED_DATE
+              FROM  TB_MZ_LIST
+             WHERE  USER_ID = #{userId}
+        ]]>
+    </select>
+</mapper>
