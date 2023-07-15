@@ -19,8 +19,8 @@ public class MzListController {
 
     private final MzListService mzListService;
 
-    @GetMapping("/{userId}")
-    public List<MzList> getMzListByUserId(@PathVariable(name = "userId") String userId){
-        return mzListService.getMzListByUserId(userId);
+    @GetMapping("/{listId}")
+    public List<MzList> getMzListByListId(@PathVariable(name = "listId") String listId){
+        return mzListService.getMzListByListId(listId);
     }
 }

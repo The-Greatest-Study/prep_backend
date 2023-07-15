@@ -16,9 +16,9 @@ public class MzListService {
 
     private final MzListRepository mzListRepository;
 
-    public List<MzList> getMzListByUserId(String userId){
-        List<MzList> mzList = mzListRepository.selectMzListByUserId(userId);
-        if(CollectionUtils.isEmpty(mzList)) throw new IllegalArgumentException("wrong userId");
+    public List<MzList> getMzListByListId(String listId){
+        List<MzList> mzList = mzListRepository.selectMzListByListId(listId);
+        if(CollectionUtils.isEmpty(mzList)) throw new IllegalArgumentException("wrong listId");
         return mzList;
     }
 }

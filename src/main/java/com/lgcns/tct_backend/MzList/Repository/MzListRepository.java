@@ -8,5 +8,5 @@ import com.lgcns.tct_backend.MzList.Model.MzList;
 
 @Mapper
 public interface MzListRepository {
-    List<MzList> selectMzListByUserId(String userId);
+    List<MzList> selectMzListByListId(String userId);
 }
