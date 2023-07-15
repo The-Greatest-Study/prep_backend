@@ -13,4 +13,28 @@
              WHERE  USER_ID = #{userId}
         ]]>
     </select>
+
+    <resultMap id = "UserWithMzListType" type= "UserMzListResponse">
+        <id column = "USER_ID" property="userId"/>
+        <result column = "USER_NAME" property="userName" />
+        <collection property = "mzList" resultMap = "mzListType" />
+    </resultMap>
+
+    <resultMap id = "mzListType" type= "MzListResponse">
+        <id column = "LIST_ID" property="listId"/>
+        <result column = "LIST_NAME" property="listName" />
+    </resultMap>
+
+    <select id = "selectUserWithMzList" resultMap = "UserWithMzListType">
+        <![CDATA[
+            SELECT /* selectUserWithMzList */
+                   user.USER_ID,
+                   user.USER_NAME,
+                   mzlist.LIST_ID,
+                   mzlist.LIST_NAME
+            FROM TB_USER user
+            LEFT JOIN TB_MZ_LIST mzlist ON user.USER_ID = mzlist.USER_ID 
+            WHERE user.USER_ID =  #{userId}
+        ]]>
+    </select>
 </mapper>

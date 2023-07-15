@@ -9,4 +9,11 @@ public class User {
     private String birthDate;
     private String gender;
     private String activeYn;
+
+    public UserResponse toUserResponse(){
+        return UserResponse.builder()
+                           .userId(userId)
+                           .userName(userName)
+                           .build();
+    }
 }

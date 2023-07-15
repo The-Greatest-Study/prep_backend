@@ -1,11 +1,14 @@
 package com.lgcns.tct_backend.MzList.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import com.lgcns.tct_backend.MzList.Model.MzList;
+import com.lgcns.tct_backend.MzList.Model.MzListResponse;
 import com.lgcns.tct_backend.MzList.Repository.MzListRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -16,9 +19,11 @@ public class MzListService {
 
     private final MzListRepository mzListRepository;
 
-    public List<MzList> getMzListByListId(String listId){
-        List<MzList> mzList = mzListRepository.selectMzListByListId(listId);
-        if(CollectionUtils.isEmpty(mzList)) throw new IllegalArgumentException("wrong listId");
-        return mzList;
+    public MzListResponse getMzListByListId(String listId){
+        Optional<MzList> mzListOpt = Optional.ofNullable(mzListRepository.selectMzListByListId(listId));
+
+        if(mzListOpt.isEmpty()) throw new IllegalArgumentException("wrong listId");
+
+        return mzListOpt.get().toMzListResponse();
     }
 }
