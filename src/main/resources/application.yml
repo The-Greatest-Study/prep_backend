@@ -20,3 +20,9 @@ logging:
   level:
     root: info
     "[com.lgcns.tct_backend]": debug
+
+mybatis:
+  mapper-locations: classpath*:sql/*.xml
+  type-aliases-package: com.lgcns.tct_backend.**.Model
+  configuration:
+    map-underscore-to-camel-case: true
