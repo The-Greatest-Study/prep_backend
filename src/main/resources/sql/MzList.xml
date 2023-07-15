@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lgcns.tct_backend.MzList.Repository.MzListRepository">
-    <select id="selectMzListByListId" parameterType="String" resultType="MzList">
+    <select id="selectMzListByListId" parameterType="String" resultType="com.lgcns.tct_backend.MzList.Model.MzList">
         <![CDATA[
             SELECT  /* user.selectUser */
                     LIST_ID,
@@ -10,6 +10,37 @@
                     CREATED_DATE
               FROM  TB_MZ_LIST
              WHERE  LIST_ID = #{listId}
+        ]]>
+    </select>
+
+    <resultMap id = "MzListWithRestaurantsMap" type = "MzListWithRestaurantsResponse">
+        <id column = "LIST_ID" property="listId" />
+        <result column="LIST_NAME" property="listName" />
+        <collection property="restaurants" resultMap="RestaurantsMap" />
+    </resultMap>
+
+    <resultMap id = "RestaurantsMap" type = "RestaurantResponse">
+        <id column = "RESTAURANT_ID" property="restaurantId" />
+        <result column="RESTAURANT_NAME" property="restaurantName" />
+        <result column="RESTAURANT_ADDRESS" property="restaurantAddress" />
+        <result column="RESTAURANT_CATEGORY" property="restaurantCategory" />
+        <result column="OPERATION_YN" property="operationYn" />
+    </resultMap>
+
+    <select id="selectMzListWithRestaurants" resultMap = "MzListWithRestaurantsMap">
+        <![CDATA[
+            SELECT /* selectMzListWithRestaurants */
+                   mzlist.LIST_ID,
+                   mzlist.LIST_NAME,
+                   res.RESTAURANT_ID,
+                   res.RESTAURANT_NAME,
+                   res.RESTAURANT_ADDRESS,
+                   res.RESTAURANT_CATEGORY,
+                   res.OPERATION_YN
+            FROM TB_MZ_LIST mzlist
+            LEFT JOIN TB_MZ_LIST_RESTAURANT_REL rel ON mzlist.LIST_ID = rel.LIST_ID
+            LEFT JOIN TB_RESTAURANT res ON rel.RESTAURANT_ID = res.RESTAURANT_ID
+            WHERE mzlist.LIST_ID = #{listId}
         ]]>
     </select>
 </mapper>

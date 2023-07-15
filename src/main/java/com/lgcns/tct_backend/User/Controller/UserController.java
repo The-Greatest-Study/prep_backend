@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lgcns.tct_backend.User.Model.User;
 import com.lgcns.tct_backend.User.Model.UserMzListResponse;
 import com.lgcns.tct_backend.User.Model.UserResponse;
 import com.lgcns.tct_backend.User.Service.UserService;
