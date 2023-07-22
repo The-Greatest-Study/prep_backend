@@ -22,7 +22,7 @@ public class MzListService {
 
         if(mzListOpt.isEmpty()) throw new IllegalArgumentException("wrong listId");
 
-        return mzListOpt.get().toMzListResponse();
+        return MzListResponse.mzListModel().mzList(mzListOpt.get()).build();
     }
 
     public MzListWithRestaurantsResponse getMzListWithRestaurants(String listId){

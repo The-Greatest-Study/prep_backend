@@ -7,10 +7,8 @@ import com.lgcns.tct_backend.MzList.Model.MzListResponse;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
 @NoArgsConstructor
 public class UserMzListResponse {
     private String userId;

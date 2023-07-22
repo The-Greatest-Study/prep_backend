@@ -6,10 +6,8 @@ import com.lgcns.tct_backend.Restaurant.Model.RestaurantResponse;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
 @NoArgsConstructor
 public class MzListWithRestaurantsResponse {
     private String listId;

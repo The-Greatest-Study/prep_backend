@@ -20,7 +20,7 @@ public class UserService {
     public UserResponse getUser(String userId){
         Optional<User> userOpt = Optional.ofNullable(userRepository.selectUser(userId));
         if(userOpt.isEmpty()) throw new IllegalArgumentException("wrong userId");
-        return userOpt.get().toUserResponse();
+        return UserResponse.userModel().user(userOpt.get()).build();
     }
 
     public UserMzListResponse getUserWithMzList(String userId){

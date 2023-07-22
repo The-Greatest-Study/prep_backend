@@ -22,14 +22,14 @@ public class UserController {
     
     @GetMapping("/{userId}")
     public ResponseEntity<UserResponse> getUser(@PathVariable(name = "userId") String userId){
-        // verification 개선필요
+        //TODO verification 개선필요
         if(StringUtils.isBlank(userId)) new IllegalArgumentException("wrong userId");
         return ResponseEntity.ok(service.getUser(userId));
     }
 
-    @GetMapping("/{userId}/mzlist")
+    @GetMapping("/{userId}/list")
     public ResponseEntity<UserMzListResponse> getUserWithMzList(@PathVariable(name = "userId") String userId){
-        // verification 개선필요
+        //TODO verification 개선필요
         if(StringUtils.isBlank(userId)) new IllegalArgumentException("wrong userId");
         return ResponseEntity.ok(service.getUserWithMzList(userId));
     }
