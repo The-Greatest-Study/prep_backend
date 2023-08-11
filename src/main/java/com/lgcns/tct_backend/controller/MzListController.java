@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lgcns.tct_backend.model.MzList;
 import com.lgcns.tct_backend.service.MzListService;
+import com.lgcns.tct_backend.service.UserService;
 
 @RestController
 public class MzListController {
 
   @Autowired
-  MzListService mzListService;
+  UserService userService;
 
   @GetMapping("/mzlist/{mzListId}")
   public ResponseEntity<List<MzList>> getMzListByListId(@PathVariable String listId) {
-    List<MzList> res = mzListService.getMzListDetailByListId(listId);
+    List<MzList> res = userService.getMzListDetailByListId(listId);
     return ResponseEntity.ok(res);
   }
   

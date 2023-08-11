@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.lgcns.tct_backend.model.MzList;
-import com.lgcns.tct_backend.service.MzListService;
+import com.lgcns.tct_backend.dto.MzListDTO;
+import com.lgcns.tct_backend.service.UserService;
 
 
 @Controller
@@ -18,11 +18,11 @@ import com.lgcns.tct_backend.service.MzListService;
 public class UserController {
 
   @Autowired
-  private MzListService mzListService;
+  private UserService userService;
 
   @GetMapping("/{userId}/list")
-  public ResponseEntity<List<MzList>> getMzListByUserId(@PathVariable String userId) {
-    List<MzList> res = mzListService.getMzListByUserId(userId);
+  public ResponseEntity<List<MzListDTO>> getMzListByUserId(@PathVariable String userId) {
+    List<MzListDTO> res = userService.getMzListByUserId(userId);
     return ResponseEntity.ok(res);
   }
   
