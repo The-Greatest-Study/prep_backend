@@ -8,4 +8,7 @@ import com.lgcns.tct_backend.model.MzList;
 
 public interface MzListRepository extends JpaRepository<MzList, String>{
   List<MzList> findByUserId(String userId);
+
+  List<MzList> findByListId(String listId);
+
 }

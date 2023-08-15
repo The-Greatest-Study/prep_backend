@@ -2,12 +2,16 @@ package com.lgcns.tct_backend.dto;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-public class MzListDetailDTO {
+@AllArgsConstructor
+@NoArgsConstructor
+public class MzListDetailResponseDTO {
   
   private String listId;
 
