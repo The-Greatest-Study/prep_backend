@@ -47,3 +47,7 @@ $ docker compose down
   - https://dbeaver.io/
   - Edit Connection (F4) → Connection settings → Driver properties
   - allowPublicKeyRetrieval 설정을 True로 변경
+
+## 5. 스프링 서버 실행
+스프링 프로젝트 루트 디렉토리에서 아래 명령어 실행
+$ ./gradlew bootRun
