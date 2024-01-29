@@ -47,3 +47,10 @@ $ docker compose down
   - https://dbeaver.io/
   - Edit Connection (F4) → Connection settings → Driver properties
   - allowPublicKeyRetrieval 설정을 True로 변경
+
+## 5. 스프링 프로젝트 실행
+스프링 프로젝트 루트 디렉토리에서 아래 명령어 실행
+프로젝트 시작시, Flyway script가 실행되어 3번에서 추가/수정된 스키마중 기존에 DB에 적용되지 않았던 내용이 자동으로 적용된다
+```bash
+$ ./gradlew bootRun
+```
