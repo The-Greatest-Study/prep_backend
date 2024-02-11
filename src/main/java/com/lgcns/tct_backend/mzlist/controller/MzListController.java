@@ -1,7 +1,6 @@
 package com.lgcns.tct_backend.mzlist.controller;
 
-import com.lgcns.tct_backend.mzlist.domain.MzList;
-import com.lgcns.tct_backend.mzlist.dto.MzListDTO;
+import com.lgcns.tct_backend.mzlist.domain.MzListEntity;
 import com.lgcns.tct_backend.mzlist.dto.MzListDetailRes;
 import com.lgcns.tct_backend.mzlist.service.MzListService;
 import lombok.RequiredArgsConstructor;
@@ -18,9 +17,9 @@ public class MzListController {
     private final MzListService mzListService;
 
     @GetMapping("/list/{userId}")
-    public ResponseEntity<List<MzList>> getMzListByUser(@PathVariable String userId) {
-        List<MzList> mzList = mzListService.getMzListByUser(userId);
-        return ResponseEntity.ok(mzList);
+    public ResponseEntity<List<MzListEntity>> getMzListByUser(@PathVariable String userId) {
+        List<MzListEntity> mzListEntity = mzListService.getMzListByUser(userId);
+        return ResponseEntity.ok(mzListEntity);
     }
 
     @GetMapping("/detail/{userId}")
