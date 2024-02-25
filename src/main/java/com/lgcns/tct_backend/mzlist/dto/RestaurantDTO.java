@@ -1,14 +1,8 @@
-package com.lgcns.tct_backend.mzlist.domain;
+package com.lgcns.tct_backend.mzlist.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "TB_RESTAURANT")
 public class RestaurantDTO {
 
-     @Id
      private String restaurantId;
 
      private String restaurantName;
@@ -17,5 +11,5 @@ public class RestaurantDTO {
 
      private String restaurantCategory;
 
-     private String operationYn;
+     private String openStatus;
 }

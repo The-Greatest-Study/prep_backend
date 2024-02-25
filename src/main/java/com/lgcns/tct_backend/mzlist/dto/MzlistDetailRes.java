@@ -1,6 +1,5 @@
 package com.lgcns.tct_backend.mzlist.dto;
 
-import com.lgcns.tct_backend.mzlist.domain.RestaurantDTO;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +10,8 @@ import java.util.List;
 @Setter
 @Getter
 @Builder
-public class MzListDetailRes {
-    private String mzListId;
+public class MzlistDetailRes {
+    private String mzlistId;
     private List<RestaurantDTO> restaurantList;
 
     public void addRestaurant(RestaurantDTO restaurantDTO) {

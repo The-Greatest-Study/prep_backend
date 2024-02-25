@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "TB_RESTAURANT")
+@Table(name = "tb_restaurant")
 public record RestaurantEntity(
 
      @Id
@@ -20,8 +20,8 @@ public record RestaurantEntity(
 
      String restaurantCategory,
 
-     String operationYn,
+     String openStatus,
 
      @ManyToMany(mappedBy = "restaurants")
-     Set<MzListEntity> mzLists
+     Set<MzlistEntity> mzLists
 ){}
