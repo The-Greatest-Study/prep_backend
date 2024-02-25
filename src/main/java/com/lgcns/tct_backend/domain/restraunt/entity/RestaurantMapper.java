@@ -1,6 +1,6 @@
-package com.lgcns.tct_backend.mzlist.domain;
+package com.lgcns.tct_backend.domain.restraunt.entity;
 
-import com.lgcns.tct_backend.mzlist.dto.RestaurantDTO;
+import com.lgcns.tct_backend.domain.restraunt.dto.RestaurantDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -1,8 +1,8 @@
-package com.lgcns.tct_backend.mzlist.service;
+package com.lgcns.tct_backend.domain.restraunt.service;
 
-import com.lgcns.tct_backend.mzlist.domain.RestaurantMapper;
-import com.lgcns.tct_backend.mzlist.dto.RestaurantDTO;
-import com.lgcns.tct_backend.mzlist.repository.RestaurantRepository;
+import com.lgcns.tct_backend.domain.restraunt.entity.RestaurantMapper;
+import com.lgcns.tct_backend.domain.restraunt.dto.RestaurantDTO;
+import com.lgcns.tct_backend.domain.restraunt.respoistory.RestaurantRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

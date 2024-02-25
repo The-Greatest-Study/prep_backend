@@ -1,5 +1,6 @@
-package com.lgcns.tct_backend.mzlist.dto;
+package com.lgcns.tct_backend.domain.mzlist.dto;
 
+import com.lgcns.tct_backend.domain.restraunt.dto.RestaurantDTO;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,8 +1,8 @@
-package com.lgcns.tct_backend.mzlist.domain;
+package com.lgcns.tct_backend.domain.mzlist.entity;
+
 
 import jakarta.persistence.*;
 
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -14,8 +14,8 @@ public record MzlistEntity(
         String userId,
 
         String mzlistName,
-        String mzListDescription,
-        String mzListIcon,
+        String mzlistDescription,
+        String mzlistIcon,
 
         //TODO: 사용법이 정확하지 않음
         @ManyToMany
@@ -23,4 +23,7 @@ public record MzlistEntity(
              joinColumns = @JoinColumn(name = "mzlist_id"),
              inverseJoinColumns = @JoinColumn(name = "restaurant_id"))
         Set<MzlistRestaurantRelEntity> restaurants
-){}
+){
+
+
+}

@@ -1,4 +1,4 @@
-package com.lgcns.tct_backend.mzlist.dto;
+package com.lgcns.tct_backend.domain.mzlist.dto;
 
 import jakarta.persistence.Id;
 import lombok.Getter;

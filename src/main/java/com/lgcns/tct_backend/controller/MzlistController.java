@@ -1,8 +1,8 @@
-package com.lgcns.tct_backend.mzlist.controller;
+package com.lgcns.tct_backend.controller;
 
-import com.lgcns.tct_backend.mzlist.domain.MzlistEntity;
-import com.lgcns.tct_backend.mzlist.dto.MzlistDetailRes;
-import com.lgcns.tct_backend.mzlist.service.MzlistService;
+import com.lgcns.tct_backend.domain.mzlist.entity.MzlistEntity;
+import com.lgcns.tct_backend.domain.mzlist.dto.MzlistDetailRes;
+import com.lgcns.tct_backend.domain.mzlist.service.MzlistService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/mz")
+@RequestMapping("/mzlist")
 public class MzlistController {
 
     private final MzlistService mzListService;

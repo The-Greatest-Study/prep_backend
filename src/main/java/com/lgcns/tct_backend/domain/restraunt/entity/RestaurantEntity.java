@@ -1,5 +1,6 @@
-package com.lgcns.tct_backend.mzlist.domain;
+package com.lgcns.tct_backend.domain.restraunt.entity;
 
+import com.lgcns.tct_backend.domain.mzlist.entity.MzlistEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;

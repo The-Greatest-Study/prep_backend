@@ -1,6 +1,6 @@
-package com.lgcns.tct_backend.mzlist.repository;
+package com.lgcns.tct_backend.domain.mzlist.repository;
 
-import com.lgcns.tct_backend.mzlist.domain.MzlistEntity;
+import com.lgcns.tct_backend.domain.mzlist.entity.MzlistEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

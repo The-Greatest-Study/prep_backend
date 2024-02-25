@@ -1,4 +1,4 @@
-package com.lgcns.tct_backend.mzlist.controller;
+package com.lgcns.tct_backend.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

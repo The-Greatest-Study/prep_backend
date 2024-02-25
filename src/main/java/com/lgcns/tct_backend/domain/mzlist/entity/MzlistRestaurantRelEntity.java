@@ -1,4 +1,4 @@
-package com.lgcns.tct_backend.mzlist.domain;
+package com.lgcns.tct_backend.domain.mzlist.entity;
 
 
 import jakarta.persistence.Entity;

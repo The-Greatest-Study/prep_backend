@@ -1,14 +1,14 @@
-package com.lgcns.tct_backend.mzlist.service;
+package com.lgcns.tct_backend.domain.mzlist.service;
 
-import com.lgcns.tct_backend.mzlist.domain.MzlistEntity;
-import com.lgcns.tct_backend.mzlist.domain.MzlistMapper;
-import com.lgcns.tct_backend.mzlist.domain.UserMzlistRelEntity;
-import com.lgcns.tct_backend.mzlist.domain.UserMzlistRelMapper;
-import com.lgcns.tct_backend.mzlist.dto.MzlistDTO;
-import com.lgcns.tct_backend.mzlist.dto.MzlistDetailRes;
-import com.lgcns.tct_backend.mzlist.dto.UserMzlistRelDTO;
-import com.lgcns.tct_backend.mzlist.repository.MzlistRepository;
-import com.lgcns.tct_backend.mzlist.repository.UserMzlistRelRepository;
+import com.lgcns.tct_backend.domain.mzlist.entity.MzlistEntity;
+import com.lgcns.tct_backend.domain.mzlist.entity.MzlistMapper;
+import com.lgcns.tct_backend.domain.restraunt.service.RestaurantService;
+import com.lgcns.tct_backend.domain.user.entity.UserMzlistRelMapper;
+import com.lgcns.tct_backend.domain.mzlist.dto.MzlistDTO;
+import com.lgcns.tct_backend.domain.mzlist.dto.MzlistDetailRes;
+import com.lgcns.tct_backend.domain.user.dto.UserMzlistRelDTO;
+import com.lgcns.tct_backend.domain.mzlist.repository.MzlistRepository;
+import com.lgcns.tct_backend.domain.user.repository.UserMzlistRelRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +26,8 @@ public class MzlistService {
     private final UserMzlistRelMapper userMzlistRelMapper;
 
     public List<MzlistEntity> getMzlistByUser(String userId) {
+        //1. 유효성 체크 필요
+
         return repository.findByUserId(userId);
     }
 
@@ -47,13 +49,13 @@ public class MzlistService {
         return res;
     }
 
-    public void createMzlist(MzlistDTO mzList){
+    public void createMzlist(MzlistDTO mzlist){
 
         //1. UserId로 User정보가 있는 지 확인
 
-        repository.save(mapper.toEntity(mzList));
+        repository.save(mapper.toEntity(mzlist));
 
-        userMzlistRelRepository.save(userMzlistRelMapper.toEntity(UserMzlistRelDTO.from(mzList)));
+        userMzlistRelRepository.save(userMzlistRelMapper.toEntity(UserMzlistRelDTO.from(mzlist)));
 
     }
 
